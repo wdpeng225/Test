@@ -11,13 +11,9 @@ import com.example.test.utils.ToolbarManager;
 
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private int layoutRecourse;
-    private int titleStringRecoures;
+    private String titleStr;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(layoutRecourse);
+    protected void onCreateView () {
         initToolBar();
         initView();
         initData();
@@ -25,17 +21,13 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         initListener();
     }
 
-    protected void setLayoutRecourse(int layoutRecourse) {
-        this.layoutRecourse = layoutRecourse;
-    }
-
-    protected void setTitleStringRecoures (int titleStringRecoures) {
-        this.titleStringRecoures = titleStringRecoures;
+    protected void setTitleString(String titleStr) {
+        this.titleStr = titleStr;
     }
 
     protected void initToolBar () {
         ToolbarManager.with(this)
-                .title(getResources().getString(titleStringRecoures))
+                .title(titleStr)
                 .setNavigationIcon(R.mipmap.left, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

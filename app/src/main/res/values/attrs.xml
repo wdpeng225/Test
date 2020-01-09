@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="index_item">
+        <!--属性名   属性类型-->
+        <attr name="activityName" format="string" />
+        <attr name="contentStr" format="string" />
+
+    </declare-styleable>
+</resources>
