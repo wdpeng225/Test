@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
     <include layout="@layout/title_tool_bar" />
+
+    <com.example.test.view.DiscScaleView
+        android:id="@+id/discScaleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:maxAngle = "300"
+        app:maxValue="60"
+        app:radius="@dimen/DIMEN_200PX"
+        app:calibrationLenght = "@dimen/DIMEN_30PX"
+        app:progressColor = "@color/blue_76C4FF"
+        app:backgroundColor = "@color/black_4A4A4A"
+        app:desc = "辛勤指数"
+        app:descSize = "@dimen/DIMEN_40PX"
+        app:descColor = "@color/blue_76C4FF"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="竖向多个柱状图"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/DIMEN_30PX"
+        android:layout_margin="@dimen/DIMEN_20PX"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_1PX"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="@dimen/DIMEN_20PX"/>
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="wrap_content"
@@ -14,10 +44,34 @@
         android:overScrollMode="never"
         android:scrollbars="none">
 
-        <com.example.test.histogram.HistogramsView
+        <com.example.test.view.HistogramsView
             android:id="@+id/histogram_chart_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="横向单个进度条"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/DIMEN_30PX"
+        android:layout_margin="@dimen/DIMEN_20PX"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_1PX"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="@dimen/DIMEN_20PX"/>
+
+    <com.example.test.view.ProgressBarView
+        android:id="@+id/progressbarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:background_color = "@color/gray_F0F0F0"
+        app:start_color = "@color/blue_76C4FF"
+        app:end_color = "@color/blue_769DF8"
+        app:view_width_percentage = "50"
+        app:view_height = "@dimen/DIMEN_16PX"
+        />
 
 </LinearLayout>

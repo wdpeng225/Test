@@ -7,6 +7,6 @@
     <color name="white">#ffffff</color>
     <color name="blue_76C4FF">#76C4FF</color>
     <color name="blue_769DF8">#769DF8</color>
-    <color name="gray_F0F0F0">#F0F0F0</color>
     <color name="black_4A4A4A">#4A4A4A</color>
+    <color name="gray_F0F0F0">#F0F0F0</color>
 </resources>

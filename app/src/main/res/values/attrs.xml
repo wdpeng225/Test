@@ -4,6 +4,26 @@
         <!--属性名   属性类型-->
         <attr name="activityName" format="string" />
         <attr name="contentStr" format="string" />
+    </declare-styleable>
 
+    <declare-styleable name="progressBar">
+        <attr name="background_color" format="color"/>
+        <attr name="start_color" format="color"/>
+        <attr name="end_color" format="color"/>
+        <attr name="view_height" format="dimension"/>
+        <attr name="view_width_percentage" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="discScaleView" >
+        <attr name="maxAngle" format="float"/>
+        <attr name="maxValue" format="integer"/>
+        <attr name="radius" format="dimension" />
+        <attr name="showStr" format="string" />
+        <attr name="calibrationLenght" format="dimension" />
+        <attr name="progressColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="desc" format="string" />
+        <attr name="descSize" format="dimension" />
+        <attr name="descColor" format="color" />
     </declare-styleable>
 </resources>

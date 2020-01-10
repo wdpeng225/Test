@@ -7,6 +7,9 @@ import android.widget.Toast;
 
 import com.example.test.R;
 import com.example.test.activity.BaseActivity;
+import com.example.test.view.DiscScaleView;
+import com.example.test.view.HistogramsView;
+import com.example.test.view.ProgressBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +27,11 @@ public class HistogramActivity extends BaseActivity {
 
     private HorizontalScrollView horizontalScrollView;
 
+    private DiscScaleView discScaleView;
+
     private HistogramsView histogramView;
+
+    private ProgressBarView progressbarView;
 
     private int positionSelected = 0;
 
@@ -41,8 +48,10 @@ public class HistogramActivity extends BaseActivity {
     @Override
     protected void initView() {
         super.initView();
+        discScaleView = findViewById(R.id.discScaleView);
         horizontalScrollView = findViewById(R.id.horizontalScrollView);
         histogramView = findViewById(R.id.histogram_chart_view);
+        progressbarView = findViewById(R.id.progressbarView);
     }
 
     @Override
@@ -63,6 +72,10 @@ public class HistogramActivity extends BaseActivity {
         histogramView.requestLayout();
         int width = histogramView.getMeasuredWidth();
         horizontalScrollView.scrollTo(width, 0);
+
+        progressbarView.setValue(62);
+        discScaleView.setProgress(42);
+
     }
 
     @Override

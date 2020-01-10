@@ -1,4 +1,4 @@
-package com.example.test.histogram;
+package com.example.test.view;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.test.R;
+import com.example.test.histogram.HistogramData;
+import com.example.test.histogram.ItemSelelctListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,6 +166,21 @@ public class HistogramsView extends View {
         selectPostion = position;
         invalidate();
         requestLayout();
-        return super.onTouchEvent(event);
+
+        boolean isDown = true;
+        float startClickPosition = 0;
+        float endClickPosition = 0;
+
+
+        switch(event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+
+                break;
+            case MotionEvent.ACTION_UP:
+
+                break;
+        }
+
+        return isDown;
     }
 }
