@@ -19,8 +19,10 @@
         app:progressColor = "@color/blue_76C4FF"
         app:backgroundColor = "@color/black_4A4A4A"
         app:desc = "辛勤指数"
-        app:descSize = "@dimen/DIMEN_40PX"
+        app:descSize = "@dimen/DIMEN_50PX"
         app:descColor = "@color/blue_76C4FF"
+        app:progressTextSize = "@dimen/DIMEN_100PX"
+        app:progressTextColor = "@color/colorAccent"
         />
 
 

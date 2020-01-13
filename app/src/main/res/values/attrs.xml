@@ -25,5 +25,7 @@
         <attr name="desc" format="string" />
         <attr name="descSize" format="dimension" />
         <attr name="descColor" format="color" />
+        <attr name="progressTextSize" format="dimension" />
+        <attr name="progressTextColor" format="dimension" />
     </declare-styleable>
 </resources>

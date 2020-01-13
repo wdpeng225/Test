@@ -74,7 +74,7 @@ public class HistogramActivity extends BaseActivity {
         horizontalScrollView.scrollTo(width, 0);
 
         progressbarView.setValue(62);
-        discScaleView.setProgress(42);
+        discScaleView.setProgress(52);
 
     }
 

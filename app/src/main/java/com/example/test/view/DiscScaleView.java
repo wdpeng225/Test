@@ -58,6 +58,10 @@ public class DiscScaleView extends View {
      */
     private String desc;
 
+    private int progressTextColor;
+
+    private float progressTextSize;
+
     private float descSize;
 
     private int descColor;
@@ -103,6 +107,8 @@ public class DiscScaleView extends View {
         desc = typedArray.getString(R.styleable.discScaleView_desc);
         descSize = typedArray.getDimension(R.styleable.discScaleView_descSize, getResources().getDimension(R.dimen.DIMEN_30PX));
         descColor = typedArray.getColor(R.styleable.discScaleView_descColor, getResources().getColor(R.color.colorPrimaryDark));
+        progressTextSize = typedArray.getDimension(R.styleable.discScaleView_progressTextSize, descSize);
+        progressTextColor = typedArray.getColor(R.styleable.discScaleView_progressTextColor, progressColor);
         limitAngle = maxAngle / maxValue;
         startAngle = (maxAngle - 360 );
     }
@@ -120,7 +126,6 @@ public class DiscScaleView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         paint.reset();
         paint.setColor(progressColor);
         paint.setStrokeWidth((float) 2.0);
@@ -128,7 +133,7 @@ public class DiscScaleView extends View {
         canvas.translate(radius, radius);
         canvas.rotate(startAngle);
 
-        for (int i = 1; i <= progress; i++) {
+        for (int i = 0; i <= progress; i++) {
             canvas.drawLine(0 - radius, 0, 0 - radius + calibrationLenght, 0, paint);
             canvas.rotate(limitAngle);
         }
@@ -140,16 +145,24 @@ public class DiscScaleView extends View {
 
         for (int i = progress + 1; i <= maxValue; i++) {
             canvas.drawLine(0 - radius, 0, 0 - radius + calibrationLenght, 0, paint);
-            canvas.rotate(limitAngle);
+            if (i < maxValue) {
+                canvas.rotate(limitAngle);
+            }
         }
 
         paint.reset();
         paint.setColor(descColor);
         paint.setAntiAlias(true);
         paint.setTextSize(descSize);
+        canvas.rotate(-1 * limitAngle * maxValue + 360 - startAngle);
+        canvas.translate((0 - descSize * desc.length()) / 2, 0 - descSize);
         canvas.drawText(desc, 0, 0, paint);
 
-
+        paint.reset();
+        paint.setColor(progressTextColor);
+        paint.setTextSize(progressTextSize);
+        canvas.translate( descSize * desc.length()/2 , descSize );
+        canvas.drawText(String.valueOf(progress), 0 - progressTextSize / 2 , descSize, paint);
 
     }
 
